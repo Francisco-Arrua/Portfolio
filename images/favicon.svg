@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+
+    <!-- Fondo -->
+    <circle
+        cx="256"
+        cy="256"
+        r="248"
+        fill="#000000"
+        stroke="#FFFFFF"
+        stroke-width="8"/>
+
+    <!-- Barra inclinada -->
+    <polygon
+        fill="#FFFFFF"
+        points="
+        150,390
+        245,150
+        285,150
+        190,390"/>
+
+    <!-- Barra inferior -->
+    <polygon
+        fill="#FFFFFF"
+        points="
+        235,390
+        305,235
+        405,235
+        405,275
+        330,275
+        280,390"/>
+
+    <!-- Barra superior -->
+    <polygon
+        fill="#FFFFFF"
+        points="
+        315,150
+        405,150
+        405,190
+        295,190"/>
+
+</svg>
