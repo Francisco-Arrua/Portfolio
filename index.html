@@ -24,17 +24,17 @@
             box-shadow: 2px 2px 0px 0px #2563eb;
         }
 
-        .btn-brutal-green {
-            box-shadow: 4px 4px 0px 0px #16a34a;
+        .btn-brutal-red {
+            box-shadow: 4px 4px 0px 0px #dc2626;
             transition: all 0.15s ease;
         }
-        .btn-brutal-green:hover {
+        .btn-brutal-red:hover {
             transform: translate(-2px, -2px);
-            box-shadow: 6px 6px 0px 0px #16a34a;
+            box-shadow: 6px 6px 0px 0px #dc2626;
         }
-        .btn-brutal-green:active {
+        .btn-brutal-red:active {
             transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0px 0px #16a34a;
+            box-shadow: 2px 2px 0px 0px #dc2626;
         }
 
         /* Despliegue suave del menú mobile */
@@ -50,9 +50,10 @@
 </head>
 <body class="bg-[#000000] text-[#ffffff] font-sans antialiased min-h-screen selection:bg-zinc-800">
 
-    <a href="https://wa.me/3424455387" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-3.5 rounded-full shadow-[0_4px_24px_rgba(37,211,102,0.3)] hover:scale-110 active:scale-95 transition-all duration-200 flex items-center justify-center" title="Chatear por WhatsApp">
-        <svg class="w-6 h-6 filter drop-shadow-sm" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.454 5.709 1.455h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    <!-- Botón Flotante de Correo -->
+    <a href="mailto:arrua.francisco.tms@gmail.com?subject=Consulta%20desde%20sitio%20web" class="fixed bottom-6 right-6 z-50 bg-[#EA4335] text-white p-3.5 rounded-full shadow-[0_4px_24px_rgba(234,67,53,0.3)] hover:scale-110 active:scale-95 transition-all duration-200 flex items-center justify-center" title="Enviar correo a Francisco">
+        <svg class="w-6 h-6 filter drop-shadow-sm" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
         </svg>
     </a>
 
@@ -87,7 +88,7 @@
             Software para tu negocio <br class="hidden sm:block"> o emprendimiento.
         </h1>
         
-        <div class="w-32 h-[2px] bg-white my-4"></div>
+        <div class="w-32 h-[2px] bg-amber-400 mx-auto mb-12"></div>
         
         <p class="text-sm md:text-base text-zinc-400 max-w-lg mb-10 leading-relaxed tracking-wide">
             Desarrollo soluciones digitales a medida enfocadas en resolver necesidades reales y optimizar procesos comerciales.
@@ -156,15 +157,19 @@
     <section id="contacto" class="max-w-3xl mx-auto px-6 py-24 text-center">
         <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter uppercase mb-4">Hablemos sobre tu idea</h2>
         
-        <div class="w-16 h-[2px] bg-emerald-500 mx-auto mb-6"></div>
+        <div class="w-16 h-[2px] bg-red-500 mx-auto mb-6"></div>
         
-        <p class="text-zinc-400 text-xs md:text-sm mb-10 max-w-sm mx-auto leading-relaxed">
-            Si buscás optimizar los procesos de tu negocio o necesitás lanzar un product web funcional, ponete en contacto para coordinar una propuesta.
+        <p class="text-zinc-400 text-xs md:text-sm mb-8 max-w-sm mx-auto leading-relaxed">
+            Si buscás optimizar los procesos de tu negocio o necesitás lanzar un producto web funcional, ponete en contacto vía correo electrónico.
+        </p>
+
+        <p class="font-mono text-xs text-zinc-500 mb-8 select-all">
+            arrua.francisco.tms@gmail.com
         </p>
         
         <div>
-            <a href="https://wa.me/3424455387" target="_blank" rel="noopener noreferrer" class="inline-block bg-zinc-950 text-white border border-zinc-700 px-8 py-4 font-bold text-xs tracking-widest uppercase btn-brutal-green">
-                Iniciar conversación por WhatsApp
+            <a href="mailto:arrua.francisco.tms@gmail.com?subject=Consulta%20sobre%20desarrollo%20de%20software" class="inline-block bg-zinc-950 text-white border border-zinc-700 px-8 py-4 font-bold text-xs tracking-widest uppercase btn-brutal-red">
+                Enviar correo electrónico
             </a>
         </div>
     </section>
