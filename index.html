@@ -83,14 +83,15 @@
         </div>
     </nav>
 
-    <header class="max-w-3xl mx-auto px-6 py-24 md:py-32 text-center flex flex-col items-center justify-center">
+    <!-- Header ajustado a pantalla completa en mobile -->
+    <header class="max-w-3xl mx-auto px-6 py-12 md:py-32 text-center flex flex-col items-center justify-center min-h-[calc(100vh-73px)] md:min-h-0">
         <h1 class="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-none mb-6">
-            Software para tu negocio <br class="hidden sm:block"> o emprendimiento.
+            Software para tu negocio <br class="hidden sm:block"> <span class="text-blue-500">O</span> emprendimiento.
         </h1>
         
-        <div class="w-32 h-[2px] bg-amber-400 mx-auto mb-12"></div>
+        <div class="w-32 h-[2px] bg-blue-500 mx-auto mb-10"></div>
         
-        <p class="text-sm md:text-base text-zinc-400 max-w-lg mb-10 leading-relaxed tracking-wide">
+        <p class="text-sm md:text-base text-zinc-400 max-w-lg mb-6 md:mb-10 leading-relaxed tracking-wide">
             Desarrollo soluciones digitales a medida enfocadas en resolver necesidades reales y optimizar procesos comerciales.
         </p>
     </header>
@@ -101,19 +102,20 @@
                 <h2 class="text-2xl md:text-3xl font-extrabold tracking-tighter uppercase">
                     Proyectos destacados
                 </h2>
-                <div class="w-16 h-[2px] bg-blue-500 mt-3"></div>
+                <div class="w-16 h-[2px] bg-green-500 mt-3"></div>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <div class="bg-black border border-zinc-800 p-6 flex flex-col justify-between hover:border-blue-500 transition-all duration-300 group">
+                                
+                <!-- Landing Pages (Ahora Verde / Emerald) -->
+                <div class="bg-black border border-zinc-800 p-6 flex flex-col justify-between hover:border-emerald-500 transition-all duration-300 group">
                     <div>
                         <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-base font-bold uppercase tracking-tight group-hover:text-blue-400 transition-colors">Landing Pages</h3>
-                            <span class="text-[9px] font-bold text-zinc-400 border border-zinc-700 px-2 py-0.5 uppercase tracking-wider group-hover:border-blue-500/50 group-hover:text-blue-400 transition-all">Servicio</span>
+                            <h3 class="text-base font-bold uppercase tracking-tight group-hover:text-emerald-400 transition-colors">Landing Pages</h3>
+                            <span class="text-[9px] font-bold text-zinc-400 border border-zinc-700 px-2 py-0.5 uppercase tracking-wider group-hover:border-emerald-500/50 group-hover:text-emerald-400 transition-all">Servicio</span>
                         </div>
                         <p class="text-zinc-400 text-xs leading-relaxed">
-                        Tu página web es la primera impresión que muchas personas tendrán de tu negocio. Por eso desarrollo sitios rápidos, modernos y totalmente adaptables a celulares, tablets y computadoras. Con un diseño profesional y un dominio propio, tus clientes podrán encontrarte fácilmente y conocer tus productos o servicios en cualquier momento.
+                            Tu página web es la primera impresión que muchas personas tendrán de tu negocio. Por eso desarrollo sitios rápidos, modernos y totalmente adaptables a celulares, tablets y computadoras. Con un diseño profesional y un dominio propio, tus clientes podrán encontrarte fácilmente y conocer tus productos o servicios en cualquier momento.
                         </p>
                     </div>
                     <div class="text-[10px] font-mono text-zinc-600 mt-6 pt-4 border-t border-zinc-950 group-hover:text-zinc-500 transition-colors">
@@ -121,11 +123,12 @@
                     </div>
                 </div>
 
-                <div class="bg-black border border-zinc-800 p-6 flex flex-col justify-between hover:border-emerald-500 transition-all duration-300 group">
+                <!-- E-commerce (Ahora Azul / Blue) -->
+                <div class="bg-black border border-zinc-800 p-6 flex flex-col justify-between hover:border-blue-500 transition-all duration-300 group">
                     <div>
                         <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-base font-bold uppercase tracking-tight group-hover:text-emerald-400 transition-colors">E-commerce con Panel de Control</h3>
-                            <span class="text-[9px] font-bold text-zinc-400 border border-zinc-700 px-2 py-0.5 uppercase tracking-wider group-hover:border-emerald-500/50 group-hover:text-emerald-400 transition-all">Desarrollo</span>
+                            <h3 class="text-base font-bold uppercase tracking-tight group-hover:text-blue-400 transition-colors">E-commerce con Panel de Control</h3>
+                            <span class="text-[9px] font-bold text-zinc-400 border border-zinc-700 px-2 py-0.5 uppercase tracking-wider group-hover:border-blue-500/50 group-hover:text-blue-400 transition-all">Desarrollo</span>
                         </div>
                         <p class="text-zinc-400 text-xs leading-relaxed">
                             Plataforma integral de venta online que vincula la experiencia de compra del usuario, con un panel de gestión interna para tu administrador (CRM). Permite administrar stock, realizar el seguimiento de clientes y automatizar tu página desde una misma interfaz.
