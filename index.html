@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Deff Studios — Diseño y desarrollo de páginas web, e-commerce y sistemas de gestión a medida para negocios y emprendimientos. Presupuesto sin cargo por WhatsApp.">
+    <meta name="keywords" content="diseño web, desarrollo web, páginas web para negocios, e-commerce, sistema de gestión, freelance developer, React, Node.js">
+    <meta property="og:title" content="Deff Studios — Páginas web para tu negocio o emprendimiento">
+    <meta property="og:description" content="Creamos páginas web y herramientas digitales adaptadas a lo que tu negocio necesita hoy.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/Gemini_Generated_Image_w7ctklw7ctklw7ct-modified.png">
+    <meta name="theme-color" content="#000000">
     <link rel="shortcut icon" href="images/Gemini_Generated_Image_w7ctklw7ctklw7ct-modified.png" type="image/x-icon">
-    <title>Deff studios</title>
+    <title>Deff Studios | Diseño y desarrollo web para negocios</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
         html {
@@ -37,6 +44,19 @@
             box-shadow: 2px 2px 0px 0px #dc2626;
         }
 
+        .btn-brutal-green {
+            box-shadow: 4px 4px 0px 0px #16a34a;
+            transition: all 0.15s ease;
+        }
+        .btn-brutal-green:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #16a34a;
+        }
+        .btn-brutal-green:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px #16a34a;
+        }
+
         /* Despliegue suave del menú mobile */
         #mobile-menu {
             transition: max-height 0.3s ease-in-out;
@@ -44,27 +64,28 @@
             overflow: hidden;
         }
         #mobile-menu.open {
-            max-height: 200px;
+            max-height: 240px;
         }
     </style>
 </head>
 <body class="bg-[#000000] text-[#ffffff] font-sans antialiased min-h-screen selection:bg-zinc-800">
 
-    <!-- Botón Flotante de Correo -->
-    <a href="mailto:dello.developments@gmail.com?subject=Consulta%20desde%20sitio%20web" class="fixed bottom-6 right-6 z-50 bg-[#EA4335] text-white p-3.5 rounded-full shadow-[0_4px_24px_rgba(234,67,53,0.3)] hover:scale-110 active:scale-95 transition-all duration-200 flex items-center justify-center" title="Enviar correo a Francisco">
+    <!-- Botón Flotante de WhatsApp (reemplazá el número por el tuyo) -->
+    <a href="https://wa.me/549XXXXXXXXXX?text=Hola%2C%20vi%20tu%20web%20y%20quiero%20consultar%20sobre%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-3.5 rounded-full shadow-[0_4px_24px_rgba(37,211,102,0.35)] hover:scale-110 active:scale-95 transition-all duration-200 flex items-center justify-center" title="Escribinos por WhatsApp">
         <svg class="w-6 h-6 filter drop-shadow-sm" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.07c-.24.68-1.4 1.32-1.93 1.4-.49.08-1.11.11-1.79-.11-.41-.13-.94-.31-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.15-1.53-1.15-2.92 0-1.39.73-2.07 1-2.35.24-.28.53-.34.7-.34h.5c.16 0 .38-.03.58.44.24.58.81 2 .88 2.15.07.15.11.32.02.51-.09.19-.14.31-.28.48-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.16-.19.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.26.13.44.19.5.3.06.11.06.63-.18 1.31z"/>
         </svg>
     </a>
 
     <nav class="border-b border-zinc-900 bg-black/90 backdrop-blur sticky top-0 z-40 shadow-[0_20px_20px_rgba(37,99,235,0.20)]">
         <div class="max-w-4xl mx-auto px-6 py-5 flex justify-between items-center">
-            <span class="font-extrabold tracking-tighter text-xl uppercase"></span>
-            
-            <div class="hidden md:flex space-x-6 text-xs uppercase tracking-widest font-semibold">
+            <a href="#" class="font-extrabold tracking-tighter text-xl uppercase">Deff<span class="text-blue-500">.</span></a>
+
+            <div class="hidden md:flex items-center space-x-6 text-xs uppercase tracking-widest font-semibold">
                 <a href="#proyectos" class="text-zinc-400 hover:text-white transition-colors">Proyectos</a>
-                <a href="#contacto" class="text-zinc-400 hover:text-white transition-colors">Contacto</a>
+                <a href="#proceso" class="text-zinc-400 hover:text-white transition-colors">Proceso</a>
                 <a href="#stack" class="text-zinc-400 hover:text-white transition-colors">Tecnologías</a>
+                <a href="#contacto" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 text-[10px] tracking-widest transition-colors">Pedí tu presupuesto</a>
             </div>
 
             <button id="menu-toggle" class="md:hidden text-zinc-400 hover:text-white focus:outline-none" aria-label="Abrir menú">
@@ -77,30 +98,63 @@
         <div id="mobile-menu" class="md:hidden bg-black border-b border-zinc-900 px-6">
             <div class="flex flex-col py-3 space-y-4 text-xs uppercase tracking-widest font-semibold">
                 <a href="#proyectos" class="text-zinc-400 hover:text-white transition-colors" onclick="toggleMenu()">Proyectos</a>
+                <a href="#proceso" class="text-zinc-400 hover:text-white transition-colors" onclick="toggleMenu()">Proceso</a>
                 <a href="#stack" class="text-zinc-400 hover:text-white transition-colors" onclick="toggleMenu()">Tecnologías</a>
-                <a href="#contacto" class="text-zinc-400 hover:text-white transition-colors" onclick="toggleMenu()">Contacto</a>
+                <a href="#contacto" class="text-blue-400 hover:text-white transition-colors" onclick="toggleMenu()">Pedí tu presupuesto</a>
             </div>
         </div>
     </nav>
 
     <!-- Header ajustado a pantalla completa en mobile -->
     <header class="max-w-3xl mx-auto px-6 py-12 md:py-32 text-center flex flex-col items-center justify-center min-h-[calc(100vh-73px)] md:min-h-0">
+        <span class="text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase text-blue-400 mb-4">Desarrollo web a medida</span>
         <h1 class="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-none mb-6">
-            Páginas Web para tu negocio <br class="hidden sm:block"> <span class="text-blue-500">O</span> emprendimiento.
+            Tu negocio necesita <br class="hidden sm:block"> vender <span class="text-blue-500">online</span>.
         </h1>
-        
+
         <div class="w-32 h-[2px] bg-blue-500 mx-auto mb-10"></div>
-        
-        <p class="text-sm md:text-base text-zinc-400 max-w-lg mb-6 md:mb-10 leading-relaxed tracking-wide">
-            Creamos páginas web y herramientas digitales adaptadas a lo que tu negocio necesita hoy. Desde mostrar tus servicios o vender tus productos, hasta organizar la gestión del día a día de forma simple.
+
+        <p class="text-sm md:text-base text-zinc-400 max-w-lg mb-8 leading-relaxed tracking-wide">
+            Diseño y desarrollo páginas web, tiendas online y sistemas de gestión a medida para que tu negocio o emprendimiento venda más y se organice mejor, sin complicaciones técnicas de tu lado.
         </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 items-center">
+            <a href="#contacto" class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 font-bold text-xs tracking-widest uppercase btn-brutal-blue">
+                Pedí tu presupuesto gratis
+            </a>
+            <a href="#proyectos" class="inline-block text-zinc-400 hover:text-white px-8 py-4 font-bold text-xs tracking-widest uppercase border border-zinc-800 transition-colors">
+                Ver proyectos
+            </a>
+        </div>
     </header>
 
-    <main id="proyectos" class="border-t border-b border-zinc-900 bg-[#050505] py-24">
+    <!-- Franja de confianza / diferenciales -->
+    <section class="border-t border-b border-zinc-900 bg-[#050505] py-8">
+        <div class="max-w-5xl mx-auto px-6 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+            <div>
+                <p class="text-xl md:text-2xl font-black text-blue-400">100%</p>
+                <p class="text-[10px] uppercase tracking-widest text-zinc-500 mt-1">Diseño a medida</p>
+            </div>
+            <div>
+                <p class="text-xl md:text-2xl font-black text-blue-400">24-48h</p>
+                <p class="text-[10px] uppercase tracking-widest text-zinc-500 mt-1">Respuesta a consultas</p>
+            </div>
+            <div>
+                <p class="text-xl md:text-2xl font-black text-blue-400">Mobile</p>
+                <p class="text-[10px] uppercase tracking-widest text-zinc-500 mt-1">First, siempre</p>
+            </div>
+            <div>
+                <p class="text-xl md:text-2xl font-black text-blue-400">Soporte</p>
+                <p class="text-[10px] uppercase tracking-widest text-zinc-500 mt-1">Post-entrega incluido</p>
+            </div>
+        </div>
+    </section>
+
+    <main id="proyectos" class="border-b border-zinc-900 bg-black py-24">
         <div class="max-w-5xl mx-auto px-6">
             <div class="mb-16 text-center sm:text-left">
                 <h2 class="text-2xl md:text-3xl font-extrabold tracking-tighter uppercase">
-                    Proyectos destacados
+                    Qué puedo hacer por tu negocio
                 </h2>
                 <div class="w-16 h-[2px] bg-green-500 mt-3"></div>
             </div>
@@ -157,21 +211,59 @@
         </div>
     </main>
 
+    <!-- Proceso de trabajo: genera confianza mostrando cómo se trabaja -->
+    <section id="proceso" class="border-b border-zinc-900 bg-[#050505] py-24">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="mb-16 text-center sm:text-left">
+                <h2 class="text-2xl md:text-3xl font-extrabold tracking-tighter uppercase">
+                    Cómo trabajamos
+                </h2>
+                <div class="w-16 h-[2px] bg-blue-500 mt-3"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="relative pl-6 border-l border-zinc-800">
+                    <span class="text-3xl font-black text-blue-500/30">01</span>
+                    <h3 class="text-sm font-bold uppercase tracking-tight mt-2 mb-2">Consulta</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed">Me contás qué necesita tu negocio, por WhatsApp o email, sin costo ni compromiso.</p>
+                </div>
+                <div class="relative pl-6 border-l border-zinc-800">
+                    <span class="text-3xl font-black text-blue-500/30">02</span>
+                    <h3 class="text-sm font-bold uppercase tracking-tight mt-2 mb-2">Propuesta</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed">Te envío alcance, tiempos y presupuesto claro, sin letra chica.</p>
+                </div>
+                <div class="relative pl-6 border-l border-zinc-800">
+                    <span class="text-3xl font-black text-blue-500/30">03</span>
+                    <h3 class="text-sm font-bold uppercase tracking-tight mt-2 mb-2">Desarrollo</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed">Construyo tu sitio con avances periódicos para que sigas el progreso.</p>
+                </div>
+                <div class="relative pl-6 border-l border-zinc-800">
+                    <span class="text-3xl font-black text-blue-500/30">04</span>
+                    <h3 class="text-sm font-bold uppercase tracking-tight mt-2 mb-2">Entrega</h3>
+                    <p class="text-zinc-400 text-xs leading-relaxed">Publicamos tu sitio y te acompaño con soporte post-entrega.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contacto" class="max-w-3xl mx-auto px-6 py-24 text-center">
         <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter uppercase mb-4">Hablemos sobre tu idea</h2>
         
         <div class="w-16 h-[2px] bg-red-500 mx-auto mb-6"></div>
         
         <p class="text-zinc-400 text-xs md:text-sm mb-8 max-w-sm mx-auto leading-relaxed">
-            Si buscás optimizar los procesos de tu negocio o necesitás lanzar un producto web funcional, ponete en contacto vía correo electrónico.
+            Si buscás optimizar los procesos de tu negocio o necesitás lanzar un producto web funcional, escribime y te respondo en menos de 48 horas.
         </p>
 
         <p class="font-mono text-xs text-zinc-500 mb-8 select-all">
-            dello.developments@gmail.com.
+            dello.developments@gmail.com
         </p>
         
-        <div>
-            <a href="mailto:dello.developments@gmail.com.?subject=Consulta%20sobre%20desarrollo%20de%20software" class="inline-block bg-zinc-950 text-white border border-zinc-700 px-8 py-4 font-bold text-xs tracking-widest uppercase btn-brutal-red">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://wa.me/549XXXXXXXXXX?text=Hola%2C%20quiero%20consultar%20sobre%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#25D366] text-black border border-[#25D366] px-8 py-4 font-bold text-xs tracking-widest uppercase btn-brutal-green">
+                Escribir por WhatsApp
+            </a>
+            <a href="mailto:dello.developments@gmail.com?subject=Consulta%20sobre%20desarrollo%20de%20software" class="inline-block bg-zinc-950 text-white border border-zinc-700 px-8 py-4 font-bold text-xs tracking-widest uppercase btn-brutal-red">
                 Enviar correo electrónico
             </a>
         </div>
@@ -247,11 +339,11 @@
 
     <footer class="border-t border-zinc-950 bg-black py-12">
         <div class="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] font-medium text-zinc-500">
-            <span>&copy; 2026 Deff Developments</span>
+            <span>&copy; 2026 Deff Studios</span>
             <div class="flex items-center space-x-6 uppercase tracking-wider text-[10px] font-semibold">
                 <a href="https://instagram.com/deff.studios" target="_blank" rel="noopener noreferrer" class="hover:text-[#E1306C] transition-colors duration-200">Instagram</a>
-                <a target="_blank" class="hover:text-[#0077B5] transition-colors duration-200">LinkedIn</a>
-                <a href="mailto:dello.developments@gmail.com." class="hover:text-[#EA4335] transition-colors duration-200">Gmail</a>
+                <a href="https://wa.me/549XXXXXXXXXX" target="_blank" rel="noopener noreferrer" class="hover:text-[#25D366] transition-colors duration-200">WhatsApp</a>
+                <a href="mailto:dello.developments@gmail.com" class="hover:text-[#EA4335] transition-colors duration-200">Gmail</a>
             </div>
         </div>
     </footer>
