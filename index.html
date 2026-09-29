@@ -80,6 +80,33 @@
         @media (prefers-reduced-motion: reduce) {
             .hero-bg-anim { animation: none; }
         }
+
+        /* Fondo animado de la sección proceso (dirección opuesta al hero) */
+        @keyframes procMove {
+            from { transform: scale(1.15) translate3d(0, 0, 0); }
+            to   { transform: scale(1.3) translate3d(2%, 2%, 0); }
+        }
+        .proc-bg-anim {
+            animation: procMove 25s ease-in-out infinite alternate;
+            will-change: transform;
+        }
+
+        /* Aparición suave al hacer scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+            transition-delay: var(--d, 0ms);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .proc-bg-anim { animation: none; }
+            .reveal { opacity: 1; transform: none; transition: none; }
+        }
     </style>
 </head>
 <body class="bg-[#000000] text-[#ffffff] font-sans antialiased min-h-screen selection:bg-zinc-800">
@@ -189,97 +216,174 @@
         </div>
     </section>
 
-    <main id="proyectos" class="border-b border-zinc-900 bg-black py-24">
-        <div class="max-w-5xl mx-auto px-6">
-            <div class="mb-16 text-center sm:text-left">
-                <h2 class="text-2xl md:text-3xl font-extrabold tracking-tighter uppercase">
-                    Qué puedo hacer por tu negocio
+    <main id="proyectos" class="relative overflow-hidden border-b border-zinc-900 bg-black py-28">
+
+        <!-- Fondo: grilla sutil + resplandores de color -->
+        <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"></div>
+        <div class="pointer-events-none absolute -top-40 left-1/4 w-96 h-96 rounded-full bg-emerald-500/10 blur-[120px]"></div>
+        <div class="pointer-events-none absolute -bottom-40 right-1/4 w-96 h-96 rounded-full bg-fuchsia-500/10 blur-[120px]"></div>
+
+        <div class="relative max-w-5xl mx-auto px-6">
+            <div class="mb-16 text-center">
+                <span class="text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase text-emerald-400">Servicios</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter uppercase mt-3">
+                    Qué podemos hacer por tu negocio
                 </h2>
-                <div class="w-16 h-[2px] bg-green-500 mt-3"></div>
+                <div class="w-16 h-[2px] bg-green-500 mt-4 mx-auto"></div>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                                
-                <!-- Landing Pages (Ahora Verde / Emerald) -->
-                <div class="bg-black border border-zinc-800 p-6 flex flex-col justify-between hover:border-emerald-500 transition-all duration-300 group">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-base font-bold uppercase tracking-tight group-hover:text-emerald-400 transition-colors">Landing Pages</h3>
-                            <span class="text-[9px] font-bold text-zinc-400 border border-zinc-700 px-2 py-0.5 uppercase tracking-wider group-hover:border-emerald-500/50 group-hover:text-emerald-400 transition-all">Servicio</span>
-                        </div>
-                        <p class="text-zinc-400 text-xs leading-relaxed">
-                            Tu página web es la primera impresión que muchas personas tendrán de tu negocio. Por eso desarrollo sitios rápidos, modernos y totalmente adaptables a celulares, tablets y computadoras. Con un diseño profesional y un dominio propio, tus clientes podrán encontrarte fácilmente y conocer tus productos o servicios en cualquier momento.
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Landing Pages -->
+                <div class="reveal" style="--d:0ms">
+                    <article class="group relative h-full flex flex-col overflow-hidden bg-gradient-to-b from-zinc-950 to-black border border-zinc-800 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-emerald-500 hover:shadow-[0_25px_60px_-20px_rgba(16,185,129,0.45)]">
+                        <div class="absolute top-0 left-0 h-[2px] w-full bg-gradient-to-r from-emerald-500 via-emerald-500/40 to-transparent"></div>
+                        <div class="pointer-events-none absolute -top-24 -right-24 w-56 h-56 rounded-full bg-emerald-500/10 blur-3xl transition-all duration-500 group-hover:bg-emerald-500/30"></div>
+                        <span class="absolute top-3 right-5 text-6xl font-black text-zinc-900 transition-colors duration-500 group-hover:text-emerald-500/20 select-none"></span>
+
+                        <span class="relative self-start text-[9px] font-bold text-emerald-400 border border-emerald-500/40 bg-emerald-500/5 px-2 py-0.5 uppercase tracking-wider mb-3">Servicio</span>
+                        <h3 class="relative text-lg font-bold uppercase tracking-tight mb-3">Landing Pages</h3>
+                        <p class="relative text-zinc-400 text-xs leading-relaxed mb-5">
+                            Tu página web es la primera impresión que muchas personas tendrán de tu negocio. Sitios rápidos, modernos y adaptables a cualquier dispositivo, con dominio propio, para que tus clientes te encuentren en cualquier momento.
                         </p>
-                    </div>
-                    <div class="text-[10px] font-mono text-zinc-600 mt-6 pt-4 border-t border-zinc-950 group-hover:text-zinc-500 transition-colors">
-                        HTML5 / Tailwind CSS / UI-UX
-                    </div>
+
+                        <ul class="relative space-y-2 text-xs text-zinc-300 mb-6">
+                            <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> 100% responsive</li>
+                            <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Dominio propio</li>
+                            <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Optimizada para Google</li>
+                        </ul>
+
+                        <div class="relative mt-auto pt-4 border-t border-zinc-900 flex items-center justify-between">
+                            <span class="text-[10px] font-mono text-zinc-600 group-hover:text-zinc-400 transition-colors">HTML5 / Tailwind / UI-UX</span>
+                            <a href="#contacto" class="text-[10px] font-bold uppercase tracking-widest text-emerald-400 hover:text-white transition-colors">Consultar →</a>
+                        </div>
+                    </article>
                 </div>
 
-                <!-- E-commerce (Ahora Azul / Blue) -->
-                <div class="bg-black border border-zinc-800 p-6 flex flex-col justify-between hover:border-blue-500 transition-all duration-300 group">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-base font-bold uppercase tracking-tight group-hover:text-blue-400 transition-colors">E-commerce con Panel de Control</h3>
-                            <span class="text-[9px] font-bold text-zinc-400 border border-zinc-700 px-2 py-0.5 uppercase tracking-wider group-hover:border-blue-500/50 group-hover:text-blue-400 transition-all">Desarrollo</span>
-                        </div>
-                        <p class="text-zinc-400 text-xs leading-relaxed">
-                            Plataforma integral de venta online que vincula la experiencia de compra del usuario, con un panel de gestión interna para tu administrador (CRM). Permite administrar stock, realizar el seguimiento de clientes y automatizar tu página desde una misma interfaz.
+                <!-- E-commerce -->
+                <div class="reveal" style="--d:150ms">
+                    <article class="group relative h-full flex flex-col overflow-hidden bg-gradient-to-b from-zinc-950 to-black border border-zinc-800 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_25px_60px_-20px_rgba(59,130,246,0.45)]">
+                        <div class="absolute top-0 left-0 h-[2px] w-full bg-gradient-to-r from-blue-500 via-blue-500/40 to-transparent"></div>
+                        <div class="pointer-events-none absolute -top-24 -right-24 w-56 h-56 rounded-full bg-blue-500/10 blur-3xl transition-all duration-500 group-hover:bg-blue-500/30"></div>
+                        <span class="absolute top-3 right-5 text-6xl font-black text-zinc-900 transition-colors duration-500 group-hover:text-blue-500/20 select-none"></span>
+
+                        <span class="relative self-start text-[9px] font-bold text-blue-400 border border-blue-500/40 bg-blue-500/5 px-2 py-0.5 uppercase tracking-wider mb-3">Desarrollo</span>
+                        <h3 class="relative text-lg font-bold uppercase tracking-tight mb-3">E-commerce con Panel de Control</h3>
+                        <p class="relative text-zinc-400 text-xs leading-relaxed mb-5">
+                            Plataforma de venta online que une la experiencia de compra del cliente con un panel de gestión interna (CRM) para que administres todo desde una misma interfaz.
                         </p>
-                    </div>
-                    <div class="text-[10px] font-mono text-zinc-600 mt-6 pt-4 border-t border-zinc-950 group-hover:text-zinc-500 transition-colors">
-                        React / Node.js / SQL / Prisma
-                    </div>
+
+                        <ul class="relative space-y-2 text-xs text-zinc-300 mb-6">
+                            <li class="flex items-center gap-2"><span class="text-blue-400">✓</span> Control de stock</li>
+                            <li class="flex items-center gap-2"><span class="text-blue-400">✓</span> Seguimiento de clientes</li>
+                            <li class="flex items-center gap-2"><span class="text-blue-400">✓</span> Panel de administración</li>
+                        </ul>
+
+                        <div class="relative mt-auto pt-4 border-t border-zinc-900 flex items-center justify-between">
+                            <span class="text-[10px] font-mono text-zinc-600 group-hover:text-zinc-400 transition-colors">React / Node / SQL / Prisma</span>
+                            <a href="#contacto" class="text-[10px] font-bold uppercase tracking-widest text-blue-400 hover:text-white transition-colors">Consultar →</a>
+                        </div>
+                    </article>
                 </div>
 
-                <div class="bg-black border border-zinc-800 p-6 flex flex-col justify-between hover:border-fuchsia-500 transition-all duration-300 group">
-                    <div>
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-base font-bold uppercase tracking-tight group-hover:text-fuchsia-400 transition-colors">Gestión para Gimnasios</h3>
-                            <span class="text-[9px] font-bold text-zinc-400 border border-zinc-700 px-2 py-0.5 uppercase tracking-wider group-hover:border-fuchsia-500/50 group-hover:text-fuchsia-400 transition-all">Sistema</span>
-                        </div>
-                        <p class="text-zinc-400 text-xs leading-relaxed">
-                            Software enfocado en la administración de gimnasios. Incluye control de asistencias, seguimiento de membresías activas y alertas para tu administrador, optimizando las tareas administrativas del día a día.
+                <!-- Gimnasios -->
+                <div class="reveal" style="--d:300ms">
+                    <article class="group relative h-full flex flex-col overflow-hidden bg-gradient-to-b from-zinc-950 to-black border border-zinc-800 p-7 transition-all duration-500 hover:-translate-y-2 hover:border-fuchsia-500 hover:shadow-[0_25px_60px_-20px_rgba(217,70,239,0.45)]">
+                        <div class="absolute top-0 left-0 h-[2px] w-full bg-gradient-to-r from-fuchsia-500 via-fuchsia-500/40 to-transparent"></div>
+                        <div class="pointer-events-none absolute -top-24 -right-24 w-56 h-56 rounded-full bg-fuchsia-500/10 blur-3xl transition-all duration-500 group-hover:bg-fuchsia-500/30"></div>
+                        <span class="absolute top-3 right-5 text-6xl font-black text-zinc-900 transition-colors duration-500 group-hover:text-fuchsia-500/20 select-none"></span>
+
+                        <span class="relative self-start text-[9px] font-bold text-fuchsia-400 border border-fuchsia-500/40 bg-fuchsia-500/5 px-2 py-0.5 uppercase tracking-wider mb-3">Sistema</span>
+                        <h3 class="relative text-lg font-bold uppercase tracking-tight mb-3">Gestión para Gimnasios</h3>
+                        <p class="relative text-zinc-400 text-xs leading-relaxed mb-5">
+                            Software enfocado en la administración de gimnasios, para optimizar las tareas administrativas del día a día y no perder de vista a ningún socio.
                         </p>
-                    </div>
-                    <div class="text-[10px] font-mono text-zinc-600 mt-6 pt-4 border-t border-zinc-950 group-hover:text-zinc-500 transition-colors">
-                        Next.js / Tailwind / DB-Management
-                    </div>
+
+                        <ul class="relative space-y-2 text-xs text-zinc-300 mb-6">
+                            <li class="flex items-center gap-2"><span class="text-fuchsia-400">✓</span> Control de asistencias</li>
+                            <li class="flex items-center gap-2"><span class="text-fuchsia-400">✓</span> Membresías activas</li>
+                            <li class="flex items-center gap-2"><span class="text-fuchsia-400">✓</span> Alertas para el administrador</li>
+                        </ul>
+
+                        <div class="relative mt-auto pt-4 border-t border-zinc-900 flex items-center justify-between">
+                            <span class="text-[10px] font-mono text-zinc-600 group-hover:text-zinc-400 transition-colors">Next.js / Tailwind / DB</span>
+                            <a href="#contacto" class="text-[10px] font-bold uppercase tracking-widest text-fuchsia-400 hover:text-white transition-colors">Consultar →</a>
+                        </div>
+                    </article>
                 </div>
+
             </div>
         </div>
     </main>
 
     <!-- Proceso de trabajo: genera confianza mostrando cómo se trabaja -->
-    <section id="proceso" class="border-b border-zinc-900 bg-[#050505] py-24">
-        <div class="max-w-5xl mx-auto px-6">
-            <div class="mb-16 text-center sm:text-left">
-                <h2 class="text-2xl md:text-3xl font-extrabold tracking-tighter uppercase">
+    <section id="proceso" class="relative overflow-hidden border-b border-zinc-900 py-28">
+
+        <!-- Fondo con imagen rotada y animada (cambiá el src por otra imagen si querés) -->
+        <div class="absolute inset-0 z-0 [container-type:size]">
+            <div class="absolute inset-0 proc-bg-anim">
+                <img
+                    src="images/fondo_section.jpg"
+                    alt=""
+                    class="absolute top-1/2 left-1/2 max-w-none object-cover -translate-x-1/2 -translate-y-1/2 rotate-90"
+                    style="width:100cqh; height:100cqw;"
+                >
+            </div>
+        </div>
+
+        <!-- Oscurecido + fundido con las secciones vecinas -->
+        <div class="absolute inset-0 z-10 bg-black/70"></div>
+        <div class="absolute inset-x-0 top-0 h-32 z-10 bg-gradient-to-b from-black to-transparent"></div>
+        <div class="absolute inset-x-0 bottom-0 h-32 z-10 bg-gradient-to-t from-black to-transparent"></div>
+
+        <div class="relative z-20 max-w-5xl mx-auto px-6">
+            <div class="mb-20 text-center">
+                <span class="text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase text-blue-400">Paso a paso</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter uppercase mt-3 text-white">
                     Cómo trabajamos
                 </h2>
-                <div class="w-16 h-[2px] bg-blue-500 mt-3"></div>
+                <div class="w-16 h-[2px] bg-blue-500 mt-4 mx-auto"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="relative pl-6 border-l border-zinc-800">
-                    <span class="text-3xl font-black text-blue-500/30">01</span>
-                    <h3 class="text-sm font-bold uppercase tracking-tight mt-2 mb-2">Consulta</h3>
-                    <p class="text-zinc-400 text-xs leading-relaxed">Me contás qué necesita tu negocio, por WhatsApp o email, sin costo ni compromiso.</p>
+            <div class="relative grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-6">
+
+                <!-- Línea de tiempo (solo desktop) -->
+                <div class="hidden md:block absolute top-7 left-7 right-7 h-px bg-gradient-to-r from-blue-500 via-blue-500/50 to-blue-500"></div>
+
+                <!-- Paso 1 -->
+                <div class="reveal relative z-10 flex flex-col" style="--d:0ms">
+                    <div class="w-14 h-14 rounded-full border border-blue-500 bg-black flex items-center justify-center font-black text-blue-400 shadow-[0_0_30px_rgba(59,130,246,0.55)]">01</div>
+                    <div class="mt-6 flex-1 bg-black/50 backdrop-blur-md border border-white/10 p-6 transition-all duration-300 hover:border-blue-500/70 hover:-translate-y-1">
+                        <h3 class="text-sm font-bold uppercase tracking-widest text-white mb-2">Consulta</h3>
+                        <p class="text-zinc-200 text-xs leading-relaxed">Me contás qué necesita tu negocio, por WhatsApp o email, sin costo ni compromiso.</p>
+                    </div>
                 </div>
-                <div class="relative pl-6 border-l border-zinc-800">
-                    <span class="text-3xl font-black text-blue-500/30">02</span>
-                    <h3 class="text-sm font-bold uppercase tracking-tight mt-2 mb-2">Propuesta</h3>
-                    <p class="text-zinc-400 text-xs leading-relaxed">Te envío alcance, tiempos y presupuesto claro, sin letra chica.</p>
+
+                <!-- Paso 2 -->
+                <div class="reveal relative z-10 flex flex-col" style="--d:150ms">
+                    <div class="w-14 h-14 rounded-full border border-blue-500 bg-black flex items-center justify-center font-black text-blue-400 shadow-[0_0_30px_rgba(59,130,246,0.55)]">02</div>
+                    <div class="mt-6 flex-1 bg-black/50 backdrop-blur-md border border-white/10 p-6 transition-all duration-300 hover:border-blue-500/70 hover:-translate-y-1">
+                        <h3 class="text-sm font-bold uppercase tracking-widest text-white mb-2">Propuesta</h3>
+                        <p class="text-zinc-200 text-xs leading-relaxed">Te envío alcance, tiempos y presupuesto claro, sin letra chica.</p>
+                    </div>
                 </div>
-                <div class="relative pl-6 border-l border-zinc-800">
-                    <span class="text-3xl font-black text-blue-500/30">03</span>
-                    <h3 class="text-sm font-bold uppercase tracking-tight mt-2 mb-2">Desarrollo</h3>
-                    <p class="text-zinc-400 text-xs leading-relaxed">Construyo tu sitio con avances periódicos para que sigas el progreso.</p>
+
+                <!-- Paso 3 -->
+                <div class="reveal relative z-10 flex flex-col" style="--d:300ms">
+                    <div class="w-14 h-14 rounded-full border border-blue-500 bg-black flex items-center justify-center font-black text-blue-400 shadow-[0_0_30px_rgba(59,130,246,0.55)]">03</div>
+                    <div class="mt-6 flex-1 bg-black/50 backdrop-blur-md border border-white/10 p-6 transition-all duration-300 hover:border-blue-500/70 hover:-translate-y-1">
+                        <h3 class="text-sm font-bold uppercase tracking-widest text-white mb-2">Desarrollo</h3>
+                        <p class="text-zinc-200 text-xs leading-relaxed">Construyo tu sitio con avances periódicos para que sigas el progreso.</p>
+                    </div>
                 </div>
-                <div class="relative pl-6 border-l border-zinc-800">
-                    <span class="text-3xl font-black text-blue-500/30">04</span>
-                    <h3 class="text-sm font-bold uppercase tracking-tight mt-2 mb-2">Entrega</h3>
-                    <p class="text-zinc-400 text-xs leading-relaxed">Publicamos tu sitio y te acompaño con soporte post-entrega.</p>
+
+                <!-- Paso 4 -->
+                <div class="reveal relative z-10 flex flex-col" style="--d:450ms">
+                    <div class="w-14 h-14 rounded-full border border-blue-500 bg-blue-600 flex items-center justify-center font-black text-white shadow-[0_0_35px_rgba(59,130,246,0.8)]">04</div>
+                    <div class="mt-6 flex-1 bg-black/50 backdrop-blur-md border border-white/10 p-6 transition-all duration-300 hover:border-blue-500/70 hover:-translate-y-1">
+                        <h3 class="text-sm font-bold uppercase tracking-widest text-white mb-2">Entrega</h3>
+                        <p class="text-zinc-200 text-xs leading-relaxed">Publicamos tu sitio y te acompaño con soporte post-entrega.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -399,6 +503,17 @@
         }
 
         menuToggle.addEventListener('click', toggleMenu);
+
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((e) => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    io.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
     </script>
 
 </body>
