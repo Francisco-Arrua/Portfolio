@@ -66,6 +66,20 @@
         #mobile-menu.open {
             max-height: 240px;
         }
+        @keyframes heroMove {
+            from { transform: scale(1.1) translate3d(0, 0, 0); }
+            to   { transform: scale(1.25) translate3d(-2%, -2%, 0); }
+        }
+
+        .hero-bg-anim {
+            animation: heroMove 10s ease-in-out infinite alternate;
+            will-change: transform;
+        }
+
+        /* Respeta a quienes desactivan animaciones en su sistema */
+        @media (prefers-reduced-motion: reduce) {
+            .hero-bg-anim { animation: none; }
+        }
     </style>
 </head>
 <body class="bg-[#000000] text-[#ffffff] font-sans antialiased min-h-screen selection:bg-zinc-800">
@@ -106,25 +120,50 @@
     </nav>
 
     <!-- Header ajustado a pantalla completa en mobile -->
-    <header class="max-w-3xl mx-auto px-6 py-12 md:py-32 text-center flex flex-col items-center justify-center min-h-[calc(100vh-73px)] md:min-h-0">
-        <span class="text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase text-blue-400 mb-4">Desarrollo web a medida</span>
-        <h1 class="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-none mb-6">
-            Tu negocio necesita <br class="hidden sm:block"> vender <span class="text-blue-500">online</span>.
-        </h1>
+    <header class="relative w-full overflow-hidden">
 
-        <div class="w-32 h-[2px] bg-blue-500 mx-auto mb-10"></div>
+        <!-- Fondo: ocupa todo el ancho y alto del header -->
+        <div class="absolute inset-0 z-0 overflow-hidden [container-type:size]">
+            <div class="absolute inset-0 hero-bg-anim">
+                <img
+                    src="images/fondo_hero.jpg"
+                    alt=""
+                    class="absolute top-1/2 left-1/2 max-w-none object-cover -translate-x-1/2 -translate-y-1/2 rotate-90"
+                    style="width:100cqh; height:100cqw;"
+                >
+            </div>
+        </div>
 
-        <p class="text-sm md:text-base text-zinc-400 max-w-lg mb-8 leading-relaxed tracking-wide">
-            Diseño y desarrollo páginas web, tiendas online y sistemas de gestión a medida para que tu negocio o emprendimiento venda más y se organice mejor, sin complicaciones técnicas de tu lado.
-        </p>
+        <!-- Oscurecer imagen -->
+        <div class="absolute inset-0 bg-black/30 z-10"></div>
 
-        <div class="flex flex-col sm:flex-row gap-4 items-center">
-            <a href="#contacto" class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 font-bold text-xs tracking-widest uppercase btn-brutal-blue">
-                Pedí tu presupuesto gratis
-            </a>
-            <a href="#proyectos" class="inline-block text-zinc-400 hover:text-white px-8 py-4 font-bold text-xs tracking-widest uppercase border border-zinc-800 transition-colors">
-                Ver proyectos
-            </a>
+        <!-- Contenido (este sí queda centrado y con ancho máximo) -->
+        <div class="relative z-20 max-w-3xl mx-auto px-6 py-12 md:py-32 text-center flex flex-col items-center justify-center min-h-[calc(100vh-73px)] md:min-h-0">
+
+            <span class="text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase text-blue-400 mb-4">
+                Desarrollo web a medida
+            </span>
+
+            <h1 class="text-4xl md:text-6xl font-black tracking-tighter uppercase leading-none mb-6">
+                Tu negocio necesita <br class="hidden sm:block"> vender <span class="text-blue-500">online</span>.
+            </h1>
+
+            <div class="w-32 h-[2px] bg-blue-500 mx-auto mb-10"></div>
+
+            <p class="text-sm md:text-base text-white max-w-lg mb-8 leading-relaxed tracking-wide">
+                Diseño y desarrollo páginas web, tiendas online y sistemas de gestión a medida para que tu negocio o emprendimiento venda más y se organice mejor, sin complicaciones técnicas de tu lado.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 items-center">
+                <a href="#contacto" class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 font-bold text-xs tracking-widest uppercase btn-brutal-blue">
+                    Pedí tu presupuesto gratis
+                </a>
+
+                <a href="#proyectos" class="inline-block text-zinc-400 hover:text-white px-8 py-4 font-bold text-xs tracking-widest uppercase border border-zinc-800 transition-colors">
+                    Ver proyectos
+                </a>
+            </div>
+
         </div>
     </header>
 
@@ -249,7 +288,7 @@
     <section id="contacto" class="max-w-3xl mx-auto px-6 py-24 text-center">
         <h2 class="text-3xl md:text-4xl font-extrabold tracking-tighter uppercase mb-4">Hablemos sobre tu idea</h2>
         
-        <div class="w-16 h-[2px] bg-red-500 mx-auto mb-6"></div>
+        <div class="w-16 h-[2px] bg-green-500 mx-auto mb-6"></div>
         
         <p class="text-zinc-400 text-xs md:text-sm mb-8 max-w-sm mx-auto leading-relaxed">
             Si buscás optimizar los procesos de tu negocio o necesitás lanzar un producto web funcional, escribime y te respondo en menos de 48 horas.
@@ -260,11 +299,8 @@
         </p>
         
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://wa.me/549XXXXXXXXXX?text=Hola%2C%20quiero%20consultar%20sobre%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#25D366] text-black border border-[#25D366] px-8 py-4 font-bold text-xs tracking-widest uppercase btn-brutal-green">
+            <a href="https://wa.me/549XXXXXXXXXX?text=Hola%2C%20quiero%20consultar%20sobre%20un%20proyecto" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#25D366] text-white border border-[#25D366] px-8 py-4 font-bold text-xs tracking-widest uppercase btn-brutal-green">
                 Escribir por WhatsApp
-            </a>
-            <a href="mailto:dello.developments@gmail.com?subject=Consulta%20sobre%20desarrollo%20de%20software" class="inline-block bg-zinc-950 text-white border border-zinc-700 px-8 py-4 font-bold text-xs tracking-widest uppercase btn-brutal-red">
-                Enviar correo electrónico
             </a>
         </div>
     </section>
